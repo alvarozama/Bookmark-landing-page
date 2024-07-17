@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  background-color: hsla(229, 31%, 21%, 0.957);
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+.mobile-nav__top {
+  padding: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em 0;
+}
+.intro__icon-img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 999;
+}
+.intro__shape {
+  height: 12em;
+  width: 18em;
+  background-color: hsl(231, 69%, 60%);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  position: absolute;
+  right: 0;
+  top: 13em;
+}
+.intro__text {
+  padding: 2.5em 2.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5em;
+  font-size: 1rem;
+}
+.intro__text-title {
+  color: hsl(229, 31%, 21%);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.intro__text-p {
+  color: hsl(229, 8%, 60%);
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+.intro__buttons {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.intro__buttons-btn {
+  text-decoration: none;
+  color: hsl(229, 31%, 21%);
+  border: none;
+  padding: 1em;
+  background-color: hsl(0, 0%, 97%);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.intro__buttons-btn:hover {
+  cursor: pointer;
+  background-color: hsl(231, 69%, 60%);
+  color: hsl(0, 0%, 97%);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5em 0;
+  text-align: center;
+}
+.features__text {
+  padding: 0 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.features__text-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: hsl(229, 31%, 21%);
+}
+.features__text-p {
+  color: hsl(229, 8%, 60%);
+  font-weight: 300;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+}
+.features__selectors {
+  width: 75%;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+}
+.features__selectors-btn {
+  border: none;
+  background-color: white;
+  height: 4rem;
+  font-size: 1.1rem;
+  color: hsl(229, 31%, 21%);
+  border-top: solid hsl(222, 34%, 86%) 1px;
+}
+.features__selectors-btn:last-child {
+  border-bottom: solid hsl(222, 34%, 86%) 1px;
+}
+.features__selectors-btn:hover {
+  cursor: pointer;
+  font-weight: 500;
+}
+.features__slide {
+  padding: 1.4em;
+}
+.features__slide-icon-img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 999;
+}
+.features__slide-icon-shape {
+  height: 12em;
+  width: 18em;
+  background-color: hsl(231, 69%, 60%);
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  position: absolute;
+  left: 0;
+  top: 83em;
+}
+.features__slide-info {
+  padding-top: 4em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.features__slide-info-title {
+  color: hsl(229, 31%, 21%);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.features__slide-info-p {
+  color: hsl(229, 8%, 60%);
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.slide-2 {
+  display: none;
+}
+
+.slide-3 {
+  display: none;
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 2em;
+  text-align: center;
+  gap: 1.5em;
+}
+.download__title {
+  color: hsl(229, 31%, 21%);
+  font-weight: 500;
+}
+.download__p {
+  color: hsl(229, 8%, 60%);
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+.download__card {
+  border: none;
+  width: 90%;
+  padding: 3em 0 2em 0;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-top: 1em;
+}
+.download__card-logo {
+  margin-bottom: 2em;
+}
+.download__card-title {
+  font-weight: 500;
+  color: hsl(229, 31%, 21%);
+  margin-bottom: 0.5em;
+}
+.download__card-version {
+  font-size: 0.9rem;
+  color: hsl(229, 8%, 60%);
+  font-weight: 300;
+  margin-bottom: 5em;
+}
+
+.download-btn {
+  padding: 1em;
+  width: 80%;
+  border: none;
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.download-btn:hover {
+  background-color: hsl(0, 94%, 66%);
+  transition: 300ms ease-in-out;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
