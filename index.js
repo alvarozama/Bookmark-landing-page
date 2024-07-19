@@ -22,3 +22,20 @@ function showSlide1() {
     slide3.style.display = 'none'
 }
 
+// FAQ
+
+const faqs = document.querySelectorAll('.faq');
+const subButtons = document.querySelectorAll('.faq__question');
+
+faqs.forEach(faq => {
+    faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+    })
+})
+
+subButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
+    })
+})
+

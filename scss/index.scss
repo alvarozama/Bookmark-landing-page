@@ -113,6 +113,7 @@ body {
             cursor: pointer;
             background-color: $clr-softblue;
             color: $clr-softgrey;
+            transition: 300ms ease-in;
         }
     }
 }
@@ -282,6 +283,207 @@ body {
 .download-btn:hover {
     background-color: $clr-softred;
     transition: 300ms ease-in-out;
+}
+
+.questions {
+    padding: 3em 2em;
+    text-align: center;
+
+    &__title {
+        color: $clr-verydarkblue;
+        font-weight: 500;
+    }
+
+    &__p {
+        color: $clr-grayishblue;
+        line-height: 1.5rem;
+        font-weight: 300;
+        padding-top: 1.5em;
+        margin-bottom: 2rem;
+    }
+}
+
+.faq {
+
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 1em 0;
+        border-bottom: solid hsl(222, 34%, 86%) 1px;
+
+        &-text {
+            font-size: 1rem;
+            font-weight: 100;
+            color: $clr-verydarkblue;
+        } 
+    }
+
+    &__answer {
+        display: flex;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease;
+
+        &-text {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 100;
+            color: $clr-verydarkblue;
+            text-align: left;
+            padding: 2em 0;
+        }
+    }
+
+    &__question::after {
+        content: url(/images/icon-arrow.svg);
+        cursor: pointer;
+    }
+
+    &__question.active::after {
+        content: url(/images/icon-arrow.svg);
+        transform: rotate(180deg);
+    }
+    
+}
+
+.faq__question:active .faq__answer {
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+}
+
+.faq.active .faq__answer {
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.info-btn {
+    background-color: $clr-softblue;
+    border: none;
+    margin: 4em;
+    padding: 1em 2em;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.info-btn:hover {
+    background-color: $clr-softred;
+    transition: 300ms ease-in;
+    cursor: pointer;
+}
+
+.join {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 4.5em 2em;
+    background-color: $clr-softblue;
+
+    &__smalltext {
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+        font-weight: 500;
+    }
+
+    &__title {
+        color: white;
+        font-weight: 400;
+        margin: 0.6em 0 1em 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        // gap: 1em;
+        width: 100%;
+
+        &-input {
+            border: none;
+            border-radius: 5px;
+            padding: 1.2em;
+            color: $clr-grayishblue;
+        }
+
+        &-submit {
+            border: none;
+            border-radius: 5px;
+            padding: 1.2em;
+            background-color: $clr-softred;
+            color: white;
+            font-weight: 500;
+            margin-top: 1em;
+        }
+
+        &-submit:hover {
+            cursor: pointer;
+        }
+
+        &-error {
+            color: white;
+            text-align: left;
+            width: 100%;
+            background-color: $clr-softred;
+            font-size: 0.7rem;
+            padding: 0.5em;
+            position: relative;
+            top: -0.2em;
+            border-radius: 5px;
+            display: none;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    padding: 3em 0;
+    background-color: $clr-verydarkblue;
+
+    &__link {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 2px;
+
+        &-logo {
+            margin-bottom: 1.5em;
+        }
+    }
+
+    &__link:hover {
+        transform: scale(1.5);
+        transition: 300ms ease-in-out;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 3em;
+        align-items: center;
+        margin-top: 1.5em;
+    }
 }
 
 
