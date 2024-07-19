@@ -25,20 +25,91 @@ body {
 }
 
 .mobile-nav {
-    position: fixed;
+    position: absolute;
+    z-index: 999;
     top: 0;
+    left: 0;
     display: none;
     flex-direction: column;
     background-color: $clr-verydarkbluetrans;
-    width: 100%;
+    width: auto;
     height: 100vh;
+    width: 100%;
     color: white;
 
     &__top {
-        padding: 1em 0;
+        padding:2em;
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+
+        &-close:hover {
+            transform: scale(1.5);
+            transition: 300ms ease-in-out;
+        }
+    }
+
+    &__bottom {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &-menu {
+            list-style-type: none;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: 100;
+            text-align: center;
+            width: 90%;
+
+            &-element {
+                padding: 1em 0;
+                border-top: solid thin $clr-grayishblue;
+
+                &-link {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                &-link:hover {
+                    color: red;
+                }
+
+                &-button {
+                    padding: 0.6em;
+                    width: 90%;
+                    background-color: hsla(229, 31%, 21%, 0);
+                    color: white;
+                    border: solid white 2px;
+                    border-radius: 10px;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    letter-spacing: 5px;
+                }
+
+                &-button:hover {
+                    background-color: white;
+                    color: $clr-verydarkblue;
+                    font-weight: 500;
+                    transition: 300ms ease-in-out;
+                }
+            }
+        }
+
+        &-socials {
+            display: flex;
+            gap: 3em;
+            position: absolute;
+            bottom: 7em;
+            align-items: center;
+
+            &-link:hover {
+                cursor: pointer;
+                transform: scale(1.5);
+                transition: 300ms ease-in-out;
+            }
+        }
     }
 
 }
@@ -56,7 +127,7 @@ body {
             width: 100%;
             object-fit: cover;
             position: relative;
-            z-index: 999;
+            z-index: 1;
          }
     }
 
@@ -176,6 +247,7 @@ body {
 
     &__slide {
         padding: 1.4em;
+        display: none;
 
         &-icon {
 
@@ -183,7 +255,7 @@ body {
                 width: 100%;
                 object-fit: cover;
                 position: relative;
-                z-index: 999;
+                z-index: 1;
             }
 
             &-shape {
@@ -219,12 +291,30 @@ body {
     }
 }
 
-.slide-2 {
-    display: none;
+.visible {
+    display: block;
 }
 
-.slide-3 {
-    display: none;
+.features__slide[visible] {
+    animation: fade-in 300ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 1;
+    }
 }
 
 .download {
@@ -347,7 +437,7 @@ body {
     }
 
     &__question.active::after {
-        content: url(/images/icon-arrow.svg);
+        content: url(/images/icon-arrow-2.svg);
         transform: rotate(180deg);
     }
     

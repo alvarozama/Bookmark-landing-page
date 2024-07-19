@@ -1,25 +1,37 @@
+// MENU
+
+function showMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = 'flex';
+}
+
+function hideMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = 'none';
+}
+
+// SLIDES
+
 const slide1 = document.getElementById('slide-1');
 const slide2 = document.getElementById('slide-2');
 const slide3 = document.getElementById('slide-3');
 
-
 function showSlide2() {
-    slide1.style.display = 'none'
-    slide2.style.display = 'block'
-    slide3.style.display = 'none'
+    slide1.classList.remove('visible');
+    slide2.classList.add('visible');
+    slide3.classList.remove('visible');
 }
 
-
 function showSlide3() {
-    slide1.style.display = 'none'
-    slide2.style.display = 'none'
-    slide3.style.display = 'block'
+    slide1.classList.remove('visible');
+    slide2.classList.remove('visible');
+    slide3.classList.add('visible');
 }
 
 function showSlide1() {
-    slide1.style.display = 'block'
-    slide2.style.display = 'none'
-    slide3.style.display = 'none'
+    slide1.classList.add('visible');
+    slide2.classList.remove('visible');
+    slide3.classList.remove('visible');
 }
 
 // FAQ
@@ -41,29 +53,38 @@ subButtons.forEach(button => {
 
 // Validate form
 
-const emailInput = document.getElementById('join-form');
-const errorMessage = document.getElementById('error-message');
+const invalidEmailError = document.getElementById('invalid-error-message');
+const noEmailError = document.getElementById('nomail-error-message');
 const form = document.getElementById('form');
 
-function handleSubmit(e) {
-    e.preventDefault(e);
-  
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
   
     console.log(data);
 
-    for (const [key, value] of Object.entries(data)) {    
-        console.log(`Key: ${key}, Value: ${value}`);
-        const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-        if (email.value.match(validEmail)) {
-            emailInput.style = '';
-            errorMessage.innerHTML = ''; // HACER QUE HAGA ALGO CUANDO ESTÉ BIEN
-        } else if (email.value === '' || !validEmail.test(email)) {
-            errorMessage.style.display = 'block';
-            emailInput.style.outline = "#FFF"
-        }; 
-    };
+    validateInputs();
+    
+})
+
+function validateInputs() {
+    const email = document.getElementById('email');
+    const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    if (email.value === '' || email.value === null) {
+        invalidEmailError.style.display = 'none';
+        email.style.border = 'solid red 2px';
+        noEmailError.style.display = 'block';
+    } else if (!email.value.match(validEmail)) {
+        noEmailError.style.display = 'none';
+        email.style.border = 'solid red 2px';
+        invalidEmailError.style.display = 'block';
+    } else {
+        noEmailError.style.display = 'none';
+        invalidEmailError.style.display = 'none';
+        email.style.border = 'solid green 2px';
+    }
 }
 
 form.addEventListener("submit", handleSubmit);
