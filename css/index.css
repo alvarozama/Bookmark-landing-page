@@ -141,6 +141,9 @@ body {
   cursor: pointer;
   font-weight: 500;
 }
+.features__selectors-btn:active {
+  color: red;
+}
 .features__slide {
   padding: 1.4em;
 }
@@ -238,6 +241,7 @@ body {
 .download-btn:hover {
   background-color: hsl(0, 94%, 66%);
   transition: 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .questions {

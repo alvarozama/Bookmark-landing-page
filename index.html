@@ -201,9 +201,9 @@
 
         <p class="join__smalltext">35,000+ already joined</p>
         <h2 class="join__title">Stay up-to-date with what we’re doing</h2>
-        <form class="join__form" action="" id="join-form">
-          <input class="join__form-input" type="text" placeholder="Enter your email address">
-          <span class="join__form-error">Error Message</span>
+        <form class="join__form" action="" id="form" novalidate>
+          <input class="join__form-input" type="text" id="email" name="email" type="text" placeholder="Enter your email address">
+          <span class="join__form-error" id="error-message">Whoops, make sure it's an email</span>
           <input class="join__form-submit" type="submit" value="Contact Us">
         </form>
 
